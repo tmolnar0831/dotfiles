@@ -37,6 +37,8 @@ autocmd FileType perl set showmatch
 let perl_extended_vars = 1
 let perl_include_pod = 1
 let perl_fold_blocks = 1
+nnoremap <silent> ,t :%!perltidy -q<Enter>
+vnoremap <silent> ,t :!perltidy -q<Enter>
 
 " python
 autocmd FileType python set tabstop=4
