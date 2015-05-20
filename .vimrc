@@ -22,7 +22,6 @@ autocmd FileType sh set tabstop=2
 autocmd FileType sh set shiftwidth=2
 autocmd FileType sh set softtabstop=2
 autocmd FileType sh set showmatch
-autocmd BufNewFile  *.sh        0r ~/.vim/skeleton.sh
 
 " perl
 autocmd FileType perl set tabstop=4
@@ -33,12 +32,14 @@ let perl_extended_vars = 1
 let perl_include_pod = 1
 " let perl_fold = 1
 let perl_fold_blocks = 1
-autocmd BufNewFile  *.pl        0r ~/.vim/skeleton.pl
 
 " python
 autocmd FileType python set tabstop=4
 autocmd FileType python set shiftwidth=4
 autocmd FileType python set softtabstop=4
 autocmd FileType python set cc=79
-autocmd BufNewFile  *.py        0r ~/.vim/skeleton.py
 
+" comment visual block
+vmap ,c :s/^/#/<ENTER>
+" uncomment visual block
+vmap ,C :s/^#//<ENTER>
