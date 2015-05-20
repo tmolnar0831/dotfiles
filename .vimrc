@@ -17,6 +17,12 @@ set cursorline
 set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff})[%Y][%l,%v][%p%%]
 
+" default
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set showmatch
+
 " shell
 autocmd FileType sh set tabstop=2
 autocmd FileType sh set shiftwidth=2
@@ -30,7 +36,6 @@ autocmd FileType perl set softtabstop=4
 autocmd FileType perl set showmatch
 let perl_extended_vars = 1
 let perl_include_pod = 1
-" let perl_fold = 1
 let perl_fold_blocks = 1
 
 " python
