@@ -17,6 +17,9 @@ set cursorline
 set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff})[%Y][%l,%v][%p%%]
 
+" paste toggle
+set pastetoggle=<F12>
+
 " default
 set tabstop=2
 set shiftwidth=2
@@ -34,9 +37,12 @@ autocmd FileType perl set tabstop=4
 autocmd FileType perl set shiftwidth=4
 autocmd FileType perl set softtabstop=4
 autocmd FileType perl set showmatch
-let perl_extended_vars = 1
-let perl_include_pod = 1
-let perl_fold_blocks = 1
+let perl_extended_vars=1
+let perl_include_pod=1
+let perl_fold=1
+let perl_fold_blocks=1
+nnoremap <silent> ,d :.!perl -MO=Deparse 2>/dev/null<cr>
+vnoremap <silent> ,d :!perl -MO=Deparse 2>/dev/null<cr>
 nnoremap <silent> ,t :%!perltidy -q<Enter>
 vnoremap <silent> ,t :!perltidy -q<Enter>
 
@@ -46,7 +52,6 @@ autocmd FileType python set shiftwidth=4
 autocmd FileType python set softtabstop=4
 autocmd FileType python set cc=79
 
-" comment visual block
-vmap ,c :s/^/#/<ENTER>
-" uncomment visual block
-vmap ,C :s/^#//<ENTER>
+" comment/uncomment
+vmap ,c :s/^/#/<Enter>
+vmap ,C :s/^#//<Enter>
