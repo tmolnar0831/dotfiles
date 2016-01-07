@@ -39,8 +39,8 @@ autocmd FileType perl set softtabstop=4
 autocmd FileType perl set showmatch
 let perl_extended_vars=1
 let perl_include_pod=1
-let perl_fold=1
-let perl_fold_blocks=1
+" let perl_fold=1
+" let perl_fold_blocks=1
 nnoremap <silent> ,d :.!perl -MO=Deparse 2>/dev/null<cr>
 vnoremap <silent> ,d :!perl -MO=Deparse 2>/dev/null<cr>
 nnoremap <silent> ,t :%!perltidy -q<Enter>
