@@ -33,13 +33,6 @@
 ;; Set the starting theme
 (load-theme 'wheatgrass t)
 
-;; Highlight color for the current theme
-(require 'hl-line)
-(set-face-background 'hl-line "#123d22")
-
-;; Use the "normal" syntax highlight under the hl-line
-(set-face-foreground 'highlight nil)
-
 ;; Sunrise and sunset for the calendar
 ;; It is a dependency of the theme picker
 (setq calendar-latitude 47.4979)
@@ -91,8 +84,6 @@ It toggles between the wheatgrass and whiteboard themes."
 
 ;; Bindings
 (global-set-key (kbd "<f11>") 'tmolnar/set-theme)
-(run-at-time tmolnar/sunrise nil 'tmolnar/set-my-theme 'whiteboard)
-(run-at-time tmolnar/sunset nil 'tmolnar/set-my-theme 'wheatgrass)
 
 (tool-bar-mode -1)
 
@@ -193,8 +184,6 @@ It toggles between the wheatgrass and whiteboard themes."
 (add-hook 'prog-mode-hook 'linum-mode)
 
 (add-to-list 'auto-mode-alist '("\\.j2\\'" . jinja2-mode))
-
-(global-hl-line-mode)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
